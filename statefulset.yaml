@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset
+  labels:
+    app: statefulset
+spec:
+  serviceName: headless-svc-dis-app
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: statefulset-dis-app
+  template:
+    metadata:
+      labels:
+        app: statefulset-dis-app
+    spec:
+      containers:
+      - name: statefulset-dis-app
+#        image: alpine:latest
+        imagePullPolicy: Always
+        command:
+#        - /etc/app/conf/container_startup.sh
+#        - /bin/sh
+#        - -c
+#        args:
+#        - echo "Starting statefulset pod"; cat /etc/app/conf/set.conf; while true; do sleep 600; done
+        image: samratisp.azurecr.io/dis-private
+        # Just spin & wait forever
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
+        volumeMounts:
+#        - name: data-vol
+#          mountPath: /app/data
+        - name: conf-vol
+          mountPath: /etc/app/conf
+        - name: grid-vol
+          mountPath: /mnt/grid-data
+        - name: grd-secret
+          mountPath: /mnt/grid-secret
+          readOnly: true
+        - name: persistent-vol
+          mountPath: /usr/local/logs
+        terminationMessagePath: /usr/local/logs/term/reason
+#        resources:
+#         limits:
+#          cpu: 100m
+#         requests:
+#          cpu: 100m
+      imagePullSecrets:
+      - name: samrat-azure-pvt-reg
+      initContainers:
+      - name: init-set
+        image: alpine:latest
+        command:
+        - /mnt/scripts/run.sh
+ #- /mnt/scripts/container_startup.sh
+        volumeMounts:
+        - name: scripts-vol
+          mountPath: /mnt/scripts
+        - name: conf-vol
+          mountPath: /mnt/data
+        - name: grid-vol
+          mountPath: /mnt/grid-data
+        - name: grd-secret
+          mountPath: /mnt/grid-secret
+          readOnly: true
+      volumes:
+      - name: scripts-vol
+        configMap:
+          name: configmap-dis-app
+          defaultMode: 0555
+      - name: grid-vol
+        configMap:
+          name: grid-config 
+          defaultMode: 0555
+      - name: grd-secret
+        secret:
+          secretName: grid-secret
+      - name: conf-vol
+        emptyDir: {}
+#      - name: persistent-vol
+#        persistentVolumeClaim:
+#         claimName: my-disk-claim
+  volumeClaimTemplates:
+  - metadata:
+      name: persistent-vol
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 200Mi
+      storageClassName: manual

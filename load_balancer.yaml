@@ -1,0 +1,37 @@
+# Load Balancer Service
+apiVersion: v1
+kind: Service
+metadata:
+ name: dis-pod-load-balancer
+spec:
+ selector:
+  app: statefulset-dis-app
+ type: LoadBalancer
+ externalIPs:
+ - 10.75.149.34
+ ports:
+ - name: w1http
+   nodePort: 31100
+   port: 31100
+   targetPort: 31100
+ - name: w1https
+   nodePort: 31101
+   port: 31101
+   targetPort: 31101
+# - name: w2http
+#   nodePort: 31200
+#   port: 31200
+#   targetPort: 31200
+# - name: w2https
+#   nodePort: 31201
+#   port: 31201
+#   targetPort: 31201
+# - name: w3http
+#   nodePort: 31300
+#   port: 31300
+#   targetPort: 31300
+# - name: w3https
+#   nodePort: 31301
+#   port: 31301
+#   targetPort: 31301
+

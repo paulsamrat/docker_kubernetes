@@ -1,0 +1,7 @@
+{
+	"auths": {
+		"samrat.docker.pvt.registry:5000": {
+			"auth": "ZG9ja2VyX3VzZXI6MTIz"
+		}
+	}
+}

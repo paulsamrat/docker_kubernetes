@@ -1,0 +1,20 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+ name: dis-pod-service
+ labels:
+  app: statefulset-dis-app
+spec:
+ selector:
+  app: statefulset-dis-app
+ type: NodePort
+ ports:
+ - name: http
+   nodePort: 31100
+   port: 31100
+   targetPort: 31100
+ - name: https
+   nodePort: 31101
+   port: 31101
+   targetPort: 31101

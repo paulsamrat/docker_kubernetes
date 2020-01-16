@@ -1,0 +1,15 @@
+# Load Balancer Service
+apiVersion: v1
+kind: Service
+metadata:
+ name: nginx-pod-load-balancer
+spec:
+ selector:
+  app: nginx-app
+ type: LoadBalancer
+ externalIPs:
+ - 10.75.148.73
+ ports:
+ #- nodePort: 31000
+ - port: 80
+   targetPort: 80

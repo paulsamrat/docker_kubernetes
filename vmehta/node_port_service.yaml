@@ -1,0 +1,18 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker-node-port-service
+spec:
+  selector:
+    component: worker-node
+  type: NodePort
+  ports:
+    - name: http-port
+      nodePort: 31075
+      port: 8000 
+      targetPort: 31075
+    - name: jsf-port
+      nodePort: 31076
+      port: 8001
+      targetPort: 31076

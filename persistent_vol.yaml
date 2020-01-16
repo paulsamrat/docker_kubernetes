@@ -1,0 +1,50 @@
+#Persistent Volume Configuration
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: pv-nfs-k8s-worker01
+ labels:
+  type: local
+spec:
+ storageClassName: manual
+ capacity:
+  storage: 200Mi
+ accessModes:
+  - ReadWriteOnce
+ nfs:
+  server: 10.75.149.34
+  path: /var/infa/nfsshare/k8s_worker01 
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: pv-nfs-k8s-worker02
+ labels:
+  type: local
+spec:
+ storageClassName: manual
+ capacity:
+  storage: 200Mi
+ accessModes:
+  - ReadWriteOnce
+ nfs:
+  server: 10.75.149.34
+  path: /var/infa/nfsshare/k8s_worker02
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: pv-nfs-k8s-worker03
+ labels:
+  type: local
+spec:
+ storageClassName: manual
+ capacity:
+  storage: 200Mi
+ accessModes:
+  - ReadWriteOnce
+ nfs:
+  server: 10.75.149.34
+  path: /var/infa/nfsshare/k8s_worker03

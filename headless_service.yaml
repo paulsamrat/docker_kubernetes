@@ -1,0 +1,24 @@
+# HeadLess Service Configuration
+apiVersion: v1
+kind: Service
+metadata:
+  name: headless-svc-dis-app
+  labels:
+    name: headless-svc-dis-app
+spec:
+  clusterIP: None
+  ports:
+  - name: w1http
+    port: 31100
+  - name: w1https
+    port: 31101
+  - name: w2http
+    port: 31200
+  - name: w2https
+    port: 31201
+  - name: w3http
+    port: 31300
+  - name: w3https
+    port: 31301
+  selector:
+    name: statefulset-dis-app

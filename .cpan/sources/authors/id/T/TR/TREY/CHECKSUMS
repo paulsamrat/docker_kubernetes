@@ -1,0 +1,71 @@
+0&&<<''; # this PGP-signed message is also valid perl
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+# CHECKSUMS file written on Mon May 29 15:54:32 2017 GMT by CPAN::Checksums (v2.12)
+$cksum = {
+  'Commands-Guarded-0.01.meta' => {
+    'md5' => '6564bc71a7e0748b2841e266783f19f1',
+    'mtime' => '2004-11-18',
+    'sha256' => 'c09a015fedcdc41bbe6b32d1914c0906b8895807c60cf86c26c6e6cced5f8c39',
+    'size' => 250
+  },
+  'Commands-Guarded-0.01.tar.gz' => {
+    'md5' => 'f2a942da877f9322db879eea2220abfb',
+    'md5-ungz' => '865148264e3bc1c30d423a4da77d6169',
+    'mtime' => '2004-11-18',
+    'sha256' => 'd9b59509d71dff1dfab4b0c42291734a311b2ce45a78afac2f1724861eb65aec',
+    'sha256-ungz' => '18e6c15eaeb0ad24033206c88a36513d4326828ba6c0eb8b3a0f26ae668005c7',
+    'size' => 12323
+  },
+  'Commands-Guarded-1.01.meta' => {
+    'md5' => 'c1356bb3d7c305881f786b503b31ea4f',
+    'mtime' => '2009-08-03',
+    'sha256' => 'b8cb46976849b9a450a20b966585a77dd71cfac7064d4560f6f6819642322c1f',
+    'size' => 422
+  },
+  'Commands-Guarded-1.01.tar.gz' => {
+    'md5' => '6f0a353a640a3f7f1c5130fdecac8684',
+    'md5-ungz' => 'f736d89495d3caff4ae6b6e082f5e540',
+    'mtime' => '2009-08-03',
+    'sha256' => 'c1a82ef387258e692a95e06f4feb7d365501713d0ca91bb1e1a05429dba68ad6',
+    'sha256-ungz' => '0c9ace05a07676cd4a972300e792e9de138ff866b14e92374c9ea73baf31d8ef',
+    'size' => 12564
+  },
+  'Text-FormatTable-1.02.meta' => {
+    'md5' => '7925bee4d144d8769ed98ffb3887c47b',
+    'mtime' => '2009-07-23',
+    'sha256' => 'a7fdd74162ed4e05fbf36c235c4fc1c41634b05598b45796953cb9c27c5539a8',
+    'size' => 401
+  },
+  'Text-FormatTable-1.02.tar.gz' => {
+    'md5' => 'bfa0881f3aae683e2680c5bb3575911a',
+    'md5-ungz' => 'bc18f332955f21ad6b63e45d67ef8ef0',
+    'mtime' => '2009-07-23',
+    'sha256' => '44c0698ef395f41d1e1e1383805024c2997fe7f6fa3f3e3fdbd12ade31283fc2',
+    'sha256-ungz' => 'c8db663b5664dee3232dc26811b81f1378e12c6c0c2714cf2ce7d0ab6859e67e',
+    'size' => 5599
+  },
+  'Text-FormatTable-1.03.meta' => {
+    'md5' => '7d9fc6e2bd7eeb28ced63b9d8c23b382',
+    'mtime' => '2009-07-24',
+    'sha256' => '7844367391903f0035f26e9c38eebd8cc3eafaab54c7720cee56a5d52e81f748',
+    'size' => 401
+  },
+  'Text-FormatTable-1.03.tar.gz' => {
+    'md5' => 'f97ad335d77095c296f8c672fee08f5b',
+    'md5-ungz' => '5bdbdfba471f8e51aae99da8b4ea3014',
+    'mtime' => '2009-07-24',
+    'sha256' => '587e94aaef1a80dab520770e18075a41b7e59add95bf6dd817bd4059b902799f',
+    'sha256-ungz' => 'c9a2aa104c9bdba51c49f845549211a55607ad6bfc14d3a366e608f7e4295de4',
+    'size' => 5745
+  }
+};
+__END__
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.14 (GNU/Linux)
+
+iEYEARECAAYFAlksRDgACgkQMo2oZ0UPiewwFgCeKL626BGnTHQbG7oPaqvvi7ky
+rVcAoIQME8DCHH3jyZWoPHTo+xXDWCNN
+=lzNf
+-----END PGP SIGNATURE-----

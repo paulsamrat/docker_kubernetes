@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2019-11-26T07:25:32Z"
+  name: default
+  namespace: default
+  resourceVersion: "124763"
+  selfLink: /api/v1/namespaces/default/serviceaccounts/default
+  uid: 9239941f-5048-408f-b415-4b0047011de4
+secrets:
+- name: myregistrykey

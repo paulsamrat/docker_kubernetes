@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-node-deployment2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: worker-node
+  template:
+    metadata:
+      labels:
+        component: worker-node
+    spec:
+      containers:
+        - name: worker-node-container
+          image: samratisp.azurecr.io/dis-private
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
+      imagePullSecrets:
+        - name: samrat-azure-pvt-reg
+      hostNetwork: true

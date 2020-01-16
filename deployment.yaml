@@ -1,0 +1,30 @@
+#Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: dis-pod-deploy
+ labels:
+  app: dis-pod-app
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: dis-pod-app
+ template:
+  metadata:
+   labels:
+    app: dis-pod-app
+  spec:
+   containers:
+   - name: dis-container
+     image: samratisp.azurecr.io/dis-private
+     # Just spin & wait forever
+     command: [ "/bin/bash", "-c", "--" ]
+     args: [ "while true; do sleep 30; done;" ]
+     ports:
+     - containerPort: 6005
+   imagePullSecrets:
+   - name: samrat-azure-pvt-reg
+   #hostNetwork: true
+   #dnsPolicy: ClusterFirstWithHostNet
+

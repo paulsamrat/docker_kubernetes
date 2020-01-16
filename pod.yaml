@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: test-pod
+ labels:
+  app: nginx
+  tier: dev
+spec:
+ containers:
+ - name: nginx-container
+   image: centos
+   # Just spin & wait forever
+   command: [ "/bin/bash", "-c", "--" ]
+   args: [ "while true; do sleep 30; done;" ]
+
